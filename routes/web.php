@@ -18,10 +18,11 @@ Route::middleware([CheckIsLogged::class])
 
         //edit notes
         Route::get('/editNote/{id}', [MainController::class, 'editNote'])->name('edit');
-        Route::get('/editNoteSubmit', [MainController::class, 'editNoteSubmit'])->name('editNoteSubmit');
+        Route::post('/editNoteSubmit', [MainController::class, 'editNoteSubmit'])->name('editNoteSubmit');
 
         // delete note
         Route::get('/deleteNote/{id}', [MainController::class, 'deleteNote'])->name('delete');
+        Route::get('/deleteNoteConfirm/{id}', [MainController::class, 'deleteNoteConfirm'])->name('deleteConfirm');
 
         Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
